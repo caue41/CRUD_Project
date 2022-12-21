@@ -1,6 +1,5 @@
 package com.dscatalog.devsuperior.resource;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dscatalog.devsuperior.entities.Client;
+import com.dscatalog.devsuperior.dto.ClientDTO;
 import com.dscatalog.devsuperior.services.ClientService;
 
 
@@ -22,8 +21,8 @@ public class ClientResource {
 	private ClientService service;
 
 	@GetMapping
-	public ResponseEntity<List<Client>> findAll(){
-		List<Client> list = service.findAll();
+	public ResponseEntity<List<ClientDTO>> findAll(){
+		List<ClientDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 }
